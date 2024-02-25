@@ -1,9 +1,48 @@
-import { StyledMenu } from './style';
+import Links from './Links/Links';
+import { StyledMenu, StyledBg } from './style';
 
 const Menu = ({ menuOpen, setMenuOpen }) => {
+  const variants = {
+    opened: {
+      clipPath: 'circle(1200px at 75px 75px)',
+      transition: {
+        type: 'spring',
+        stiffness: 20,
+      },
+    },
+    closed: {
+      clipPath: 'circle(0px at 75px 75px)',
+      transition: {
+        // delay: 2,
+        type: 'spring',
+        stiffness: 400,
+        damping: 40,
+      },
+    },
+    initial: {
+      clipPath: 'circle(0px at 75px 75px)',
+    },
+  };
+
   return (
-    <StyledMenu className={menuOpen && 'active'} onClick={() => setMenuOpen(!menuOpen)}>
-      <ul>
+    // <StyledMenu className={menuOpen && 'active'}>
+    <StyledMenu animate={menuOpen ? 'opened' : 'closed'} initial='initial'>
+      <StyledBg variants={variants}>
+        <Links />
+      </StyledBg>
+    </StyledMenu>
+  );
+};
+
+export default Menu;
+
+// в стилях к этому компоненту прописать const StyledMenu = styled(motion.div)`
+//  добавить в css к нему display: flex
+// прописать анимацию тут
+// сменить тут структуру и прописать стили как в том портфолио
+//  onClick={() => setMenuOpen(!menuOpen)}
+{
+  /* <ul>
         <li>
           <a href='#intro'>Home</a>
         </li>
@@ -16,9 +55,5 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
         <li>
           <a href='#intro'>Contacts</a>
         </li>
-      </ul>
-    </StyledMenu>
-  );
-};
-
-export default Menu;
+      </ul> */
+}
