@@ -1,29 +1,28 @@
-import Links from './Links/Links';
 import { StyledMenu, StyledBg } from './style';
+import Links from './Links/Links';
 
+const variants = {
+  opened: {
+    clipPath: 'circle(1200px at 75px 75px)',
+    transition: {
+      type: 'spring',
+      stiffness: 20,
+    },
+  },
+  closed: {
+    clipPath: 'circle(0px at 75px 75px)',
+    transition: {
+      delay: 0.2,
+      type: 'spring',
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+  initial: {
+    clipPath: 'circle(0px at 75px 75px)',
+  },
+};
 const Menu = ({ menuOpen, setMenuOpen }) => {
-  const variants = {
-    opened: {
-      clipPath: 'circle(1200px at 75px 75px)',
-      transition: {
-        type: 'spring',
-        stiffness: 20,
-      },
-    },
-    closed: {
-      clipPath: 'circle(0px at 75px 75px)',
-      transition: {
-        // delay: 2,
-        type: 'spring',
-        stiffness: 400,
-        damping: 40,
-      },
-    },
-    initial: {
-      clipPath: 'circle(0px at 75px 75px)',
-    },
-  };
-
   return (
     // <StyledMenu className={menuOpen && 'active'}>
     <StyledMenu animate={menuOpen ? 'opened' : 'closed'} initial='initial'>
@@ -57,3 +56,5 @@ export default Menu;
         </li>
       </ul> */
 }
+
+// import Links from './Links/Links';
