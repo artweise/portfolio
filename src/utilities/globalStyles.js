@@ -9,6 +9,7 @@ export const SPACING = {
   5: '64px',
   6: '128px',
   7: '256px',
+  7.5: '384px',
   8: '512px',
   9: '1024px',
 };

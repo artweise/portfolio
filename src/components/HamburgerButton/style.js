@@ -7,7 +7,7 @@ export const StyledHamburgerButton = styled(FlexContainer)`
   border-radius: 50%;
   position: fixed;
   background-color: red;
-  right: 5%;
+  left: 5%;
   top: 40px;
   transform: scale(0);
   transition: all 0.3s ease-out;
