@@ -4,7 +4,6 @@ import { SPACING, FlexContainer } from '../../utilities/globalStyles';
 
 export const StyledMenu = styled(motion.div)`
   display: flex;
-  background-color: yellow;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -13,7 +12,6 @@ export const StyledMenu = styled(motion.div)`
   // position: fixed;
   // top: 0;
   // right: -${SPACING[7.5]};
-  //   z-index: 2;
   // transition: all 1s ease;
 
   // &&.active {
@@ -29,5 +27,5 @@ export const StyledBg = styled(motion.div)`
   bottom: 0;
   width: ${SPACING[7.5]};
   background-color: pink;
-  z-index: -1; /* Ensure the background is behind other content */
+  z-index: 2; /* Ensure the background is behind other content */
 `;

@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import { SPACING, FlexContainer } from '../../../utilities/globalStyles';
 
 export const MenuContainer = styled(motion.div)`
-  // display: flex;
+  display: flex;
   // position: absolute;
   // width: 100%;
   // height: 100%;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   // gap: 20px;
 `;
 
@@ -20,12 +20,21 @@ export const MenuList = styled.ul`
   flex-direction: column;
   gap: 20px;
   list-style: none;
-  cursor: pointer;
+  position: fixed;
+  height: 100vh;
+  top: 35vh;
+  left: 0;
+  right: 0; /* Cover the entire width of the viewport */
+  width: ${SPACING[7.5]};
 `;
+
 export const MenuItem = styled.li`
   font-size: 40px;
   color: #fff;
   text-decoration: none;
+  &: hover {
+    list-style: disc;
+  }
 `;
 
 export const MenuLinks = styled(Link)`
