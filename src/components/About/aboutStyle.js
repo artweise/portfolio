@@ -5,6 +5,6 @@ export const StyledAboutSection = styled(FlexContainer)`
   height: 95vh;
   justify-content: center-between;
   align-items: center;
-  background-color: rgb(115, 139, 243);
+  background-color: #ffffff;
   font-size: 30px;
 `;

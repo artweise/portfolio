@@ -5,6 +5,6 @@ export const StyledContactsSection = styled(FlexContainer)`
   height: 95vh;
   justify-content: center-between;
   align-items: center;
-  background-color: rgb(219, 112, 147);
+  background-color: #272835;
   font-size: 30px;
 `;

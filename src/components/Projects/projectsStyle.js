@@ -5,6 +5,6 @@ export const StyledProjectsSection = styled(FlexContainer)`
   height: 95vh;
   justify-content: center-between;
   align-items: center;
-  background-color: rgb(135, 228, 198);
+  background-color: #4b4d68;
   font-size: 30px;
 `;
