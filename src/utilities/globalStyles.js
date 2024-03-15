@@ -7,7 +7,9 @@ export const SPACING = {
   3: '16px',
   3.5: '24px',
   4: '32px',
+  4.5: '48px',
   5: '64px',
+  5.5: '96px',
   6: '128px',
   7: '256px',
   7.5: '384px',
@@ -22,7 +24,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    max-width: 1440px;
+    font-family: 'Montserrat', sans-serif;
     font-size: ${SPACING[3]}
   }
 
@@ -32,8 +35,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: lightblue;
+    background-color: #272835;
     height: 200vh;
+    overflow-x: hidden;
   }
 `;
 

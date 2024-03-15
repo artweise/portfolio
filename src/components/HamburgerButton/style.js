@@ -6,7 +6,7 @@ export const StyledHamburgerButton = styled(FlexContainer)`
   width: 65px;
   border-radius: 50%;
   position: fixed;
-  background-color: red;
+  background-color: #95c5c9;
   left: 3%;
   top: 40px;
   transform: scale(0);
