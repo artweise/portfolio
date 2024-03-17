@@ -7,16 +7,7 @@ export const StyledMenu = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // width: ${SPACING[7.5]};
-  // height: 100vh;
-  // position: fixed;
-  // top: 0;
-  // right: -${SPACING[7.5]};
-  // transition: all 1s ease;
-
-  // &&.active {
-  //   right: 0;
-  // }
+  height: 100vh; /* Set the menu height to fill the viewport */
 `;
 
 export const StyledBg = styled(motion.div)`
@@ -28,4 +19,23 @@ export const StyledBg = styled(motion.div)`
   width: ${SPACING[7.5]};
   background-color: pink;
   z-index: 2; /* Ensure the background is behind other content */
+`;
+
+export const StyledSlidingLinkContainer = styled(motion.div)`
+  position: absolute; /* Position the container relative to the menu */
+  bottom: ${SPACING[3]}; /* Adjust the bottom spacing as needed */
+  display: flex;
+  gap: 5px;
+  flex-direction: row; /* Display the links vertically */
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  color: #fff;
+  padding-left: ${SPACING[6]};
+  a {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+  }
 `;

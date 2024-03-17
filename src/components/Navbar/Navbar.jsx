@@ -39,8 +39,7 @@ const Navbar = () => {
         onHoverStart={() => setIsHovered(true)} // Set isHovered to true on hover start
         onHoverEnd={() => setIsHovered(false)} // Set isHovered to false on hover end
       >
-        <motion.span variants={copyrightVariants}
-        >&copy;</motion.span>
+        <motion.span variants={copyrightVariants}>&copy;</motion.span>
         <motion.div>
           <NavLink to='/' style={{ color: '#ffffff', textDecoration: 'none' }}>
             {isHovered ? 'Olga Lysko' : 'Code by Olga'}

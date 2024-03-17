@@ -3,6 +3,7 @@ import {
   StyledImageContainer,
   StyledSlidingTextContainer,
   StyledTextContainer,
+  Wrapper,
 } from './heroStyle';
 import { motion } from 'framer-motion';
 
@@ -51,13 +52,25 @@ const textVariants = {
 const Hero = () => {
   return (
     <StyledHeroSection>
-      <StyledTextContainer variants={textVariants} initial='initial' animate='animate'>
-        <motion.h2 variants={textVariants}>Hello! I'm Olga.</motion.h2>
-        <motion.h4 variants={textVariants}>A passionate Full Stack Developer</motion.h4>
-        <motion.p variants={textVariants}>
-          I aim to make the complex simple and the ordinary extraordinary.
-        </motion.p>
-      </StyledTextContainer>
+      <Wrapper>
+        <StyledTextContainer variants={textVariants} initial='initial' animate='animate'>
+          <motion.h2 variants={textVariants}>Hello! I'm Olga.</motion.h2>
+          <motion.h4 variants={textVariants}>A passionate Full Stack Developer</motion.h4>
+          <motion.p variants={textVariants}>
+            I aim to make the complex simple and the ordinary extraordinary.
+          </motion.p>
+        </StyledTextContainer>
+        <StyledImageContainer variants={imageVariants} initial='initial' whileHover='hover'>
+          <motion.img
+            variants={imageVariants}
+            initial='initial'
+            whileHover='hover'
+            src='/images/hero.jpg'
+            alt=''
+          />
+        </StyledImageContainer>
+      </Wrapper>
+
       <StyledSlidingTextContainer
         className='slidingTextContainer'
         variants={sliderVariants}
@@ -66,15 +79,6 @@ const Hero = () => {
       >
         Full Stack Web Developer
       </StyledSlidingTextContainer>
-      <StyledImageContainer variants={imageVariants} initial='initial' whileHover='hover'>
-        <motion.img
-          variants={imageVariants}
-          initial='initial'
-          whileHover='hover'
-          src='/images/hero.jpg'
-          alt=''
-        />
-      </StyledImageContainer>
     </StyledHeroSection>
   );
 };

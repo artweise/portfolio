@@ -1,7 +1,10 @@
-import { StyledMenu, StyledBg } from './style';
+import { StyledMenu, StyledBg, StyledSlidingLinkContainer } from './menuStyle';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Links from './Links/Links';
 
-const variants = {
+const menuCircleVariants = {
   opened: {
     clipPath: 'circle(1200px at 75px 75px)',
     transition: {
@@ -22,12 +25,49 @@ const variants = {
     clipPath: 'circle(0px at 75px 75px)',
   },
 };
+
+const sliderVariants = {
+  initial: {
+    x: 0,
+    transition: {
+      duration: 0.4,
+    },
+  },
+  hover: {
+    // x: '-10%',
+    transition: {
+      duration: 0.4,
+    },
+  },
+};
+const copyrightVariants = {
+  rest: { rotate: 0 },
+  hover: { rotate: 360, transition: { duration: 0.4 } },
+};
+
 const Menu = ({ menuOpen, setMenuOpen }) => {
+  // State variable to track hover state
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     // <StyledMenu className={menuOpen && 'active'}>
     <StyledMenu animate={menuOpen ? 'opened' : 'closed'} initial='initial'>
-      <StyledBg variants={variants}>
+      <StyledBg variants={menuCircleVariants}>
         <Links />
+        <StyledSlidingLinkContainer
+          variants={sliderVariants}
+          initial='initial'
+          whileHover='hover'
+          onHoverStart={() => setIsHovered(true)} // Set isHovered to true on hover start
+          onHoverEnd={() => setIsHovered(false)} // Set isHovered to false on hover end
+        >
+          <motion.span variants={copyrightVariants}>&copy;</motion.span>
+          <motion.div>
+            <NavLink to='/' style={{ color: '#ffffff', textDecoration: 'none' }}>
+              {isHovered ? 'Olga Lysko' : 'Code by Olga'}
+            </NavLink>
+          </motion.div>
+        </StyledSlidingLinkContainer>
       </StyledBg>
     </StyledMenu>
   );
