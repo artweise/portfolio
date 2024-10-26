@@ -6,7 +6,6 @@ import { SPACING, FlexContainer } from '../../utilities/globalStyles';
 export const StyledHeroSection = styled(FlexContainer)`
   height: 95vh;
   justify-content: center-between;
-  // align-items: start;
   padding: ${SPACING[6]} ${SPACING[4]};
   background-color: #272835;
   font-size: 30px;
@@ -43,11 +42,9 @@ export const StyledSlidingTextContainer = styled(motion.div)`
 
 export const StyledTextContainer = styled(motion.div)`
   width: calc(50vw - 68px);
-  // width: 50%
   display: flex;
   padding: ${SPACING[5]};
   flex-direction: column;
-  // justify-content: center;
   gap: 20px;
   & > h2 {
     font-size: 60px;
@@ -62,6 +59,5 @@ export const StyledTextContainer = styled(motion.div)`
   & > p {
     font-size: 16px;
     color: #ffffff;
-    // font-weight: 300;
   }
 `;

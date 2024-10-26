@@ -58,12 +58,7 @@ const Hero = () => {
           I aim to make the complex simple and the ordinary extraordinary.
         </motion.p>
       </StyledTextContainer>
-      <StyledSlidingTextContainer
-        className='slidingTextContainer'
-        variants={sliderVariants}
-        initial='initial'
-        animate='animate'
-      >
+      <StyledSlidingTextContainer variants={sliderVariants} initial='initial' animate='animate'>
         Full Stack Web Developer
       </StyledSlidingTextContainer>
       <StyledImageContainer variants={imageVariants} initial='initial' whileHover='hover'>
