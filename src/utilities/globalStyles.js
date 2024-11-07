@@ -11,6 +11,7 @@ export const SPACING = {
   5: '64px',
   5.5: '96px',
   6: '128px',
+  6.5: '236px',
   7: '256px',
   7.5: '384px',
   8: '512px',
@@ -24,21 +25,33 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    max-width: 1440px;
     font-family: 'Montserrat', sans-serif;
-    font-size: ${SPACING[3]}
+  }
+
+  body {
+    background-color: #272835;
+    overflow-x: hidden;
   }
 
   a {
     text-decoration: none;
     color: black;
   }
+`;
 
-  body {
-    background-color: #272835;
-    height: 200vh;
-    overflow-x: hidden;
-  }
+export const MainContainer = styled.div`
+  // max-width: 1440px; /* Max width for big screens */
+  // margin: 0 auto;
+  // padding: 0 20px;
+
+  // @media (max-width: 1600px) {
+  //   max-width: 90%;
+  // }
+
+  // @media (max-width: 768px) {
+  //   max-width: 100%;
+  //   padding: 0 10px;
+  // }
 `;
 
 export const FlexContainer = styled.div`

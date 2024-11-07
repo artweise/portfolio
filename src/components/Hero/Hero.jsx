@@ -1,8 +1,9 @@
 import {
-  StyledHeroSection,
-  StyledImageContainer,
-  StyledSlidingTextContainer,
-  StyledTextContainer,
+  HeroSection,
+  MainContainerHero,
+  TextContainer,
+  ImageContainer,
+  SlidingTextContainer,
 } from './heroStyle';
 import { motion } from 'framer-motion';
 
@@ -11,11 +12,11 @@ const sliderVariants = {
     x: 0,
   },
   animate: {
-    x: '-220%',
+    x: '-200%',
     transition: {
       repeat: Infinity,
       repeatType: 'mirror',
-      duration: 40,
+      duration: 36,
     },
   },
 };
@@ -50,27 +51,30 @@ const textVariants = {
 
 const Hero = () => {
   return (
-    <StyledHeroSection>
-      <StyledTextContainer variants={textVariants} initial='initial' animate='animate'>
-        <motion.h2 variants={textVariants}>Hello! I'm Olga.</motion.h2>
-        <motion.h4 variants={textVariants}>A passionate Full Stack Developer</motion.h4>
-        <motion.p variants={textVariants}>
-          I aim to make the complex simple and the ordinary extraordinary.
-        </motion.p>
-      </StyledTextContainer>
-      <StyledSlidingTextContainer variants={sliderVariants} initial='initial' animate='animate'>
-        Full Stack Web Developer
-      </StyledSlidingTextContainer>
-      <StyledImageContainer variants={imageVariants} initial='initial' whileHover='hover'>
-        <motion.img
-          variants={imageVariants}
-          initial='initial'
-          whileHover='hover'
-          src='/images/hero.jpg'
-          alt=''
-        />
-      </StyledImageContainer>
-    </StyledHeroSection>
+    <HeroSection>
+      <MainContainerHero>
+        <TextContainer variants={textVariants} initial='initial' animate='animate'>
+          <motion.h2 variants={textVariants}>Hi! I'm Olga.</motion.h2>
+          <motion.h4 variants={textVariants}>A passionate Full Stack Developer</motion.h4>
+          <motion.p variants={textVariants}>
+            I aim to make the complex simple and the ordinary extraordinary.
+          </motion.p>
+        </TextContainer>
+        <ImageContainer variants={imageVariants} initial='initial' whileHover='hover'>
+          <motion.img
+            variants={imageVariants}
+            initial='initial'
+            whileHover='hover'
+            src='/images/hero.jpg'
+            alt=''
+          />
+        </ImageContainer>
+      </MainContainerHero>
+
+      <SlidingTextContainer variants={sliderVariants} initial='initial' animate='animate'>
+        Web Developer
+      </SlidingTextContainer>
+    </HeroSection>
   );
 };
 
