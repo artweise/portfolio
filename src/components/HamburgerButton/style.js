@@ -1,12 +1,16 @@
 import styled from 'styled-components';
-import { FlexContainer } from '../../utilities/globalStyles';
+import {
+  FlexContainer,
+  TEAL_SHADES,
+  GRAY_SHADES,
+} from '../../utilities/globalStyles';
 
 export const StyledHamburgerButton = styled(FlexContainer)`
   height: 65px;
   width: 65px;
   border-radius: 50%;
   position: fixed;
-  background-color: #95c5c9;
+  background-color: ${TEAL_SHADES[300]};
   left: 3%;
   top: 40px;
   transform: scale(0);
@@ -23,7 +27,7 @@ export const StyledHamburgerButton = styled(FlexContainer)`
   .line2,
   .line3 {
     height: 3px;
-    background-color: white;
+    background-color: ${GRAY_SHADES[50]};
     width: 100%;
     transform-origin: center;
     transition: all 1s ease;
@@ -34,14 +38,14 @@ export const StyledHamburgerButton = styled(FlexContainer)`
       width: 40%;
       position: absolute;
       &:first-child {
-          background-color: black;
+          background-color: ${GRAY_SHADES[1000]};
           transform: rotate(45deg);
       }
       &:nth-child(2) {
           opacity: 0;
       }
       &:last-child {
-          background-color: black;
+          background-color: ${GRAY_SHADES[1000]};
           transform: rotate(-45deg);
       }
   }

@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { SPACING, FlexContainer } from '../../utilities/globalStyles';
+import {
+  SPACING,
+  FlexContainer,
+  GRAY_SHADES,
+  SLATE_SHADES,
+  SLATE_UTILS,
+} from '../../utilities/globalStyles';
 
 export const HeroSection = styled(FlexContainer)`
   flex-direction: column;
@@ -9,8 +15,6 @@ export const HeroSection = styled(FlexContainer)`
   // height: calc(100vh - 68px);
   height: 95vh;
   justify-content: center;
-  // padding: ${SPACING[6]} ${SPACING[4]};
-  // background-color: #272835;
   font-size: 30px;
 
   @media (max-width: 1024px) {
@@ -33,7 +37,6 @@ export const MainContainerHero = styled(FlexContainer)`
     flex-direction: column-reverse;
     height: auto;
     padding: 0 ${SPACING[3]};
-    // gap: ${SPACING[4]};
   }
 `;
 
@@ -46,27 +49,27 @@ export const TextContainer = styled(motion.div)`
   padding: ${SPACING[3]} ${SPACING[5]};
   max-width: 650px;
   max-height: 650px;
+  position: relative;
+  z-index: 10; /* Elevate text and button above animated text */
 
   & > h2 {
     font-size: 60px;
-    color: #ffffff;
+    color: ${GRAY_SHADES[50]};
     font-weight: 300;
   }
 
   & > h4 {
     font-size: 30px;
-    color: #ffffff;
+    color: ${GRAY_SHADES[50]};
     font-weight: 300;
   }
 
   & > p {
     font-size: 20px;
-    color: #ffffff;
+    color: ${GRAY_SHADES[50]};
   }
 
   @media (max-width: 1024px) {
-    // position: static;
-    // margin: 0 auto;
     padding: ${SPACING[2]};
     max-width: 500px;
     max-height: 500px;
@@ -99,7 +102,7 @@ export const ImageContainer = styled(motion.div)`
   justify-content: center;
   padding: ${SPACING[5]};
   border-radius: 50%;
-  border: 2px dashed #4b4d68;
+  border: 2px dashed ${SLATE_SHADES[500]};
   overflow: hidden;
   position: static;
   margin: ${SPACING[5]} auto;
@@ -109,17 +112,16 @@ export const ImageContainer = styled(motion.div)`
     width: 100%;
     height: 100%;
     padding: ${SPACING[5]};
-    border: 2px dashed #4b4d68;
+    border: 2px dashed ${SLATE_SHADES[500]};
     object-fit: cover;
   }
 
   @media (max-width: 1024px) {
     position: static;
-    // margin: 0 auto;
     padding: ${SPACING[4.5]};
     max-width: 600px;
     max-height: 600px;
-    border: 2px dashed #4b4d68;
+    border: 2px dashed ${SLATE_SHADES[500]};
     margin: ${SPACING[6]} auto ${SPACING[5]};
 
     & > img {
@@ -127,7 +129,7 @@ export const ImageContainer = styled(motion.div)`
       max-height: 100%;
       padding: ${SPACING[4.5]};
       object-fit: cover;
-      border: 2px dashed #4b4d68;
+      border: 2px dashed ${SLATE_SHADES[500]};
     }
   }
 
@@ -137,7 +139,7 @@ export const ImageContainer = styled(motion.div)`
     padding: ${SPACING[4]};
     max-width: 300px;
     max-height: 300px;
-    border: 2px dashed #4b4d68;
+    border: 2px dashed ${SLATE_SHADES[500]};
 
     & > img {
       padding: 26px;
@@ -147,13 +149,15 @@ export const ImageContainer = styled(motion.div)`
 
 export const SlidingTextContainer = styled(motion.div)`
   position: absolute;
-  padding: ${SPACING[4.5]};
-  font-size: 11.5em;
-  bottom: -120px;
+  // padding-bottom: ${SPACING[2]};
+  font-size: 10em;
+  bottom: -80px;
   white-space: nowrap;
-  color: #4b4d6825;
+  color: ${SLATE_UTILS.overlay};
   width: 50%;
   font-weight: bold;
+  z-index: 1; /* Lower animated text below interactive elements */
+  pointer-events: none; /* Make text transparent for clicks */
 
   @media (max-width: 1024px) {
     display: none;

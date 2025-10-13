@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { SPACING, FlexContainer } from '../../utilities/globalStyles';
+import {
+  SPACING,
+  FlexContainer,
+  GRAY_SHADES,
+  SLATE_SHADES,
+} from '../../utilities/globalStyles';
 
 export const StyledNavbar = styled(FlexContainer)`
   display: flex;
@@ -8,14 +13,14 @@ export const StyledNavbar = styled(FlexContainer)`
   justify-content: space-between;
   align-items: center;
   padding-inline: ${SPACING[4]};
-  background-color: #272835;
-  color: white;
+  background-color: ${SLATE_SHADES[800]};
+  color: ${GRAY_SHADES[50]};
   font-weight: 300;
   z-index: 2;
   a {
     text-decoration: none;
     padding: 5px 10px;
-    color: #ffffff;
+    color: ${GRAY_SHADES[50]};
   }
   ul {
     display: flex;

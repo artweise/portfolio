@@ -5,7 +5,7 @@ import HamburgerButton from './components/HamburgerButton/HamburgerButton';
 import Menu from './components/Menu/Menu';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
-import Contacts from './components/Contacts/Contacts';
+import ContactPage from './pages/ContactPage/ContactPage';
 import HomePage from './pages/HomePage';
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
         <Route path='/' element={<HomePage />} />
         <Route path='/about' element={<About />} />
         <Route path='/projects' element={<Projects />} />
-        <Route path='/contacts' element={<Contacts />} />
+        <Route path='/contact' element={<ContactPage />} />
       </Routes>
     </>
   );

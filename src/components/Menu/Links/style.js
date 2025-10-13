@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { SPACING, FlexContainer } from '../../../utilities/globalStyles';
+import { SPACING, GRAY_SHADES } from '../../../utilities/globalStyles';
 
 export const MenuContainer = styled(motion.div)`
   display: flex;
@@ -30,7 +30,7 @@ export const MenuList = styled.ul`
 
 export const MenuItem = styled.li`
   font-size: 40px;
-  color: #fff;
+  color: ${GRAY_SHADES[50]};
   text-decoration: none;
   &: hover {
     list-style: disc;
@@ -38,7 +38,7 @@ export const MenuItem = styled.li`
 `;
 
 export const MenuLinks = styled(Link)`
-  color: #fff;
+  color: ${GRAY_SHADES[50]};
   font-size: 40px;
   cursor: pointer;
 `;

@@ -35,10 +35,10 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
 
 export default Menu;
 
-// в стилях к этому компоненту прописать const StyledMenu = styled(motion.div)`
-//  добавить в css к нему display: flex
-// прописать анимацию тут
-// сменить тут структуру и прописать стили как в том портфолио
+// TODO: Add styled component const StyledMenu = styled(motion.div)`
+// TODO: Add display: flex to CSS
+// TODO: Add animation here
+// TODO: Change structure and add styles like in portfolio
 //  onClick={() => setMenuOpen(!menuOpen)}
 {
   /* <ul>

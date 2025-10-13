@@ -78,8 +78,8 @@ const Links = ({ menuOpen, setMenuOpen }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <MenuLinks to='/contacts' onClick={handleCloseMenu}>
-              Contacts
+            <MenuLinks to='/contact' onClick={handleCloseMenu}>
+              Contact
             </MenuLinks>
           </MenuItem>
         </MenuList>
